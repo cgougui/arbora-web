@@ -1,0 +1,109 @@
+.toggle {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+}
+
+.segmented {
+  background: var(--arbora-surface);
+  border: 1px solid var(--arbora-border);
+  backdrop-filter: blur(10px);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  align-items: stretch;
+  margin-top: 48px;
+
+  @media (max-width: $mantine-breakpoint-md) {
+    grid-template-columns: 1fr;
+    max-width: 480px;
+    margin-inline: auto;
+  }
+}
+
+.tier {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: 32px;
+  border-radius: 28px;
+  border: 1px solid var(--arbora-border);
+  background: var(--arbora-surface);
+  backdrop-filter: blur(12px);
+
+  &[data-featured] {
+    border-color: transparent;
+    background:
+      linear-gradient(var(--arbora-surface-strong), var(--arbora-surface-strong)) padding-box,
+      var(--arbora-gradient) border-box;
+    border: 1.5px solid transparent;
+    box-shadow: 0 30px 80px -30px var(--arbora-glow-1);
+
+    @media (min-width: $mantine-breakpoint-md) {
+      transform: translateY(-12px);
+    }
+  }
+}
+
+.badge {
+  position: absolute;
+  top: 28px;
+  right: 28px;
+}
+
+.name {
+  font-size: 1.25rem;
+}
+
+.description {
+  margin-top: 8px;
+  min-height: 3em;
+  color: var(--arbora-muted);
+  font-size: var(--mantine-font-size-sm);
+}
+
+.price {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  margin-block: 28px;
+}
+
+.amount {
+  font-family: var(--mantine-font-family-headings);
+  font-size: 3.5rem;
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: -0.05em;
+  font-variant-numeric: tabular-nums;
+}
+
+.unit {
+  color: var(--arbora-muted);
+  font-size: var(--mantine-font-size-sm);
+}
+
+.features {
+  display: grid;
+  gap: 12px;
+  margin: 28px 0 0;
+  padding: 28px 0 0;
+  border-top: 1px solid var(--arbora-border);
+  list-style: none;
+  font-size: var(--mantine-font-size-sm);
+
+  & li {
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+  }
+
+  & svg {
+    flex: none;
+    margin-top: 1px;
+    color: var(--mantine-color-arbor-4);
+  }
+}

@@ -1,0 +1,118 @@
+/* Design tokens shared by CSS modules. Theme-dependent values are swapped per color scheme. */
+:root {
+  --arbora-gradient: linear-gradient(110deg, #34d399 0%, #22d3ee 45%, #a78bfa 100%);
+  --arbora-glow-1: rgb(52 211 153 / 0.35);
+  --arbora-glow-2: rgb(34 211 238 / 0.28);
+  --arbora-glow-3: rgb(167 139 250 / 0.28);
+  --arbora-gradient-text: var(--arbora-gradient);
+  --arbora-ease: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+[data-mantine-color-scheme="light"] {
+  /* Deeper stops keep gradient text legible on light backgrounds. */
+  --arbora-gradient-text: linear-gradient(110deg, #059669 0%, #0891b2 45%, #7c3aed 100%);
+  --arbora-surface: rgb(255 255 255 / 0.72);
+  --arbora-surface-strong: #ffffff;
+  --arbora-border: rgb(11 15 14 / 0.08);
+  --arbora-border-strong: rgb(11 15 14 / 0.14);
+  --arbora-muted: #5a6662;
+  --arbora-grid-line: rgb(11 15 14 / 0.05);
+  --arbora-glow-1: rgb(52 211 153 / 0.28);
+  --arbora-glow-2: rgb(34 211 238 / 0.2);
+  --arbora-glow-3: rgb(167 139 250 / 0.2);
+  --mantine-color-body: #f7faf9;
+}
+
+[data-mantine-color-scheme="dark"] {
+  --arbora-surface: rgb(16 21 20 / 0.6);
+  --arbora-surface-strong: #101514;
+  --arbora-border: rgb(255 255 255 / 0.07);
+  --arbora-border-strong: rgb(255 255 255 / 0.13);
+  --arbora-muted: #8f9b97;
+  --arbora-grid-line: rgb(255 255 255 / 0.035);
+  --mantine-color-body: #070a09;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  font-feature-settings: "cv11", "ss01", "ss03";
+  overflow-x: clip;
+}
+
+::selection {
+  background: rgb(52 211 153 / 0.35);
+}
+
+:focus-visible {
+  outline: 2px solid var(--mantine-color-arbor-4);
+  outline-offset: 2px;
+}
+
+/* Gradient text used for highlighted words in headings. */
+.arbora-gradient-text {
+  background: var(--arbora-gradient-text);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: arbora-shimmer 8s linear infinite;
+}
+
+@keyframes arbora-shimmer {
+  to {
+    background-position: 200% center;
+  }
+}
+
+/* Scroll-driven reveal, no JavaScript. Falls back to always-visible content. */
+@supports (animation-timeline: view()) {
+  .arbora-reveal {
+    animation: arbora-reveal linear both;
+    animation-timeline: view();
+    animation-range: entry 0% cover 22%;
+  }
+}
+
+@keyframes arbora-reveal {
+  from {
+    opacity: 0;
+    transform: translateY(32px) scale(0.98);
+    filter: blur(6px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+    filter: none;
+  }
+}
+
+/* Page transitions (React <ViewTransition>). */
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation-duration: 280ms;
+  animation-timing-function: var(--arbora-ease);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  .arbora-reveal {
+    animation: none;
+  }
+}

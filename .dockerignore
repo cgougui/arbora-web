@@ -1,0 +1,7 @@
+.git
+.react-router
+build
+node_modules
+Dockerfile
+compose.yaml
+README.md

@@ -1,0 +1,83 @@
+.footer {
+  position: relative;
+  margin-top: clamp(3rem, 2rem + 4vw, 6rem);
+  padding-block: 64px 32px;
+  border-top: 1px solid var(--arbora-border);
+  overflow: hidden;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1.4fr repeat(4, 1fr);
+  gap: var(--mantine-spacing-xl);
+
+  @media (max-width: $mantine-breakpoint-md) {
+    grid-template-columns: repeat(2, 1fr);
+
+    & > :first-child {
+      grid-column: 1 / -1;
+    }
+  }
+}
+
+.columnTitle {
+  font-size: var(--mantine-font-size-sm);
+  font-weight: 600;
+  margin-bottom: var(--mantine-spacing-sm);
+}
+
+.link {
+  display: block;
+  padding-block: 5px;
+  font-size: var(--mantine-font-size-sm);
+  color: var(--arbora-muted);
+  text-decoration: none;
+  transition: color 150ms ease;
+
+  &:hover {
+    color: var(--mantine-color-text);
+  }
+}
+
+.bottom {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: var(--mantine-spacing-md);
+  margin-top: 64px;
+  padding-top: 24px;
+  border-top: 1px solid var(--arbora-border);
+  font-size: var(--mantine-font-size-sm);
+  color: var(--arbora-muted);
+}
+
+.status {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+
+  &::before {
+    content: "";
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--mantine-color-arbor-4);
+    box-shadow: 0 0 0 4px rgb(52 211 153 / 0.18);
+  }
+}
+
+/* Oversized wordmark that fades into the page edge. */
+.wordmark {
+  margin-top: 48px;
+  font-family: var(--mantine-font-family-headings);
+  font-weight: 800;
+  font-size: clamp(5rem, 22vw, 18rem);
+  line-height: 0.8;
+  letter-spacing: -0.035em;
+  text-align: center;
+  background: linear-gradient(180deg, var(--arbora-border-strong), transparent 85%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  user-select: none;
+}

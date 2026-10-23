@@ -1,0 +1,56 @@
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-top: clamp(2.5rem, 2rem + 2vw, 4rem);
+  counter-reset: step;
+
+  @media (max-width: $mantine-breakpoint-sm) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.step {
+  position: relative;
+  padding: 28px;
+  border-radius: 24px;
+  border: 1px solid var(--arbora-border);
+  background: var(--arbora-surface);
+  counter-increment: step;
+
+  &::before {
+    content: "0" counter(step);
+    display: block;
+    margin-bottom: 40px;
+    font-family: var(--mantine-font-family-headings);
+    font-size: 3.5rem;
+    font-weight: 800;
+    line-height: 1;
+    letter-spacing: -0.05em;
+    background: var(--arbora-gradient-text);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+}
+
+/* Connector line between steps. */
+.step:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  top: 56px;
+  left: calc(28px + 5.5rem);
+  right: -8px;
+  height: 1px;
+  background: linear-gradient(90deg, var(--arbora-border-strong), transparent);
+
+  @media (max-width: $mantine-breakpoint-sm) {
+    display: none;
+  }
+}
+
+.description {
+  margin-top: 8px;
+  color: var(--arbora-muted);
+  line-height: 1.6;
+}

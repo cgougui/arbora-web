@@ -1,0 +1,25 @@
+.root {
+  padding-top: clamp(4rem, 3rem + 4vw, 7rem);
+}
+
+.title {
+  text-align: center;
+  font-size: var(--mantine-font-size-sm);
+  color: var(--arbora-muted);
+  margin-bottom: var(--mantine-spacing-xl);
+}
+
+.logo {
+  font-family: var(--mantine-font-family-headings);
+  font-size: 1.6rem;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  white-space: nowrap;
+  opacity: 0.45;
+  padding-inline: 28px;
+  transition: opacity 200ms ease;
+
+  &:hover {
+    opacity: 0.9;
+  }
+}

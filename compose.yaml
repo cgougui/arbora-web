@@ -1,0 +1,28 @@
+# Both services use host networking: on this machine Docker's bridge network
+# can't reach the internet or be reached from the host (published ports hang).
+# With `network_mode: host` the servers bind directly to the host's ports.
+
+services:
+  # `docker compose up` — dev server with hot reload on http://localhost:5173
+  web:
+    build:
+      context: .
+      target: dev
+      network: host
+    network_mode: host
+    # Match your host user so files the dev server writes (e.g. .react-router/) stay yours.
+    user: "${UID:-1000}:${GID:-1000}"
+    volumes:
+      - .:/app
+      # Keep the container's node_modules instead of the host's.
+      - /app/node_modules
+
+  # `docker compose --profile prod up` — production build on http://localhost:3000
+  prod:
+    profiles: [prod]
+    build:
+      context: .
+      target: prod
+      network: host
+    network_mode: host
+    restart: unless-stopped
