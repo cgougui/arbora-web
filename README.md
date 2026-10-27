@@ -36,6 +36,15 @@ All user-facing text lives in **`app/content/copy.ts`**. Components never hardco
 To change wording, edit `copy.ts`. To change look and feel, edit `app/components`,
 `app/theme.ts` and `app/styles/global.css`.
 
+The home page summarizes the product and highlights browsing, search, and previews.
+The features page includes the full feature inventory in eight linked sections.
+`FeatureDirectory` provides sticky category navigation that follows the visible section.
+
+Product screenshots are illustrative UI placeholders rendered by `AppMockup`, with a
+scene for each feature group. Shared example files live in `home.mockup`; scene copy
+lives in `mockups`. Replace these mockups with real screenshots when they are ready.
+Pricing and download pages still contain the original shell copy.
+
 ## Layout
 
 ```

@@ -1,5 +1,5 @@
 import { CallToAction } from "~/components/marketing/CallToAction";
-import { FeatureBento } from "~/components/marketing/FeatureBento";
+import { FeatureDirectory } from "~/components/marketing/FeatureDirectory";
 import { Section } from "~/components/ui/Section";
 import { SectionHeading } from "~/components/ui/SectionHeading";
 import { copy } from "~/content/copy";
@@ -12,15 +12,12 @@ export default function Features() {
 
   return (
     <>
-      <Section pb={0}>
+      <Section pb={{ base: 32, md: 48 }}>
         <SectionHeading copy={page.heading} order={1} />
       </Section>
-      {page.groups.map((group) => (
-        <Section key={group.eyebrow}>
-          <SectionHeading copy={group} align="start" />
-          <FeatureBento items={group.items} bento={false} />
-        </Section>
-      ))}
+      <Section pt={0} pb={0}>
+        <FeatureDirectory />
+      </Section>
       <CallToAction copy={page.cta} />
     </>
   );

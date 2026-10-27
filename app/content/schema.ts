@@ -14,7 +14,36 @@ export type FeatureId =
   | "sync"
   | "privacy"
   | "automation"
-  | "keyboard";
+  | "keyboard"
+  | "workspaces"
+  | "connections"
+  | "organize";
+
+export type FeatureGroupId =
+  | "browse"
+  | "search"
+  | "preview"
+  | "operations"
+  | "workspaces"
+  | "connections"
+  | "organize"
+  | "personalize";
+
+export interface FeatureGroup extends SectionHeading {
+  id: FeatureGroupId;
+  navLabel: string;
+  items: { title: string; description: string }[];
+}
+
+export interface MockupScene {
+  title: string;
+  caption: string;
+  breadcrumb: string[];
+  secondaryBreadcrumb: string[];
+  label: string;
+  detail: string;
+  rows: { label: string; value: string }[];
+}
 
 export type PlatformId = "macos" | "windows" | "linux";
 
@@ -42,6 +71,7 @@ export interface Feature {
   id: FeatureId;
   title: string;
   description: string;
+  to?: string;
 }
 
 export interface Step {
@@ -105,7 +135,6 @@ export interface SiteCopy {
   };
   nav: {
     links: Cta[];
-    signIn: Cta;
     primary: Cta;
     toggleTheme: string;
     openMenu: string;
@@ -139,9 +168,18 @@ export interface SiteCopy {
       files: MockupFile[];
       preview: { title: string; kind: string; rows: { label: string; value: string }[] };
       statusBar: string;
+      caption: string;
+      workspace: string;
+      workspaces: string[];
+      tabs: string[];
+      columns: string[];
+      secondaryFiles: MockupFile[];
+      secondaryStatusBar: string;
+      actions: string[];
     };
     logos: { title: string; names: string[] };
-    features: SectionHeading & { items: Feature[] };
+    features: SectionHeading & { items: Feature[]; link: Cta };
+    showcases: (SectionHeading & { id: FeatureGroupId; points: string[]; link: Cta })[];
     steps: SectionHeading & { items: Step[] };
     stats: Stat[];
     testimonials: SectionHeading & { items: Testimonial[] };
@@ -151,9 +189,11 @@ export interface SiteCopy {
   features: {
     meta: Meta;
     heading: SectionHeading;
-    groups: (SectionHeading & { items: Feature[] })[];
+    navigationLabel: string;
+    groups: FeatureGroup[];
     cta: CallToAction;
   };
+  mockups: Record<FeatureGroupId, MockupScene>;
   pricing: {
     meta: Meta;
     heading: SectionHeading;

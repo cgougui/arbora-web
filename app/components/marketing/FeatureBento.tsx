@@ -1,4 +1,6 @@
 import { Text, Title } from "@mantine/core";
+import { IconArrowUpRight } from "@tabler/icons-react";
+import { Link } from "react-router";
 
 import type { Feature } from "~/content/schema";
 import classes from "./FeatureBento.module.css";
@@ -24,8 +26,9 @@ export function FeatureBento({ items, bento = true }: FeatureBentoProps) {
         const FeatureIcon = featureIcons[feature.id];
         const featured = bento && (i === 0 || i === 3);
         return (
-          <article
+          <Link
             key={feature.id}
+            to={feature.to ?? "/features"}
             className={`${classes.card} ${featured ? classes.featured : ""} arbora-reveal`}
             onPointerMove={trackPointer}
           >
@@ -37,7 +40,8 @@ export function FeatureBento({ items, bento = true }: FeatureBentoProps) {
               {feature.title}
             </Title>
             <Text className={classes.description}>{feature.description}</Text>
-          </article>
+            <IconArrowUpRight size={18} className={classes.arrow} aria-hidden="true" />
+          </Link>
         );
       })}
     </div>

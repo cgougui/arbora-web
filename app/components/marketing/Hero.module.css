@@ -41,6 +41,8 @@
   line-height: 0.98;
   letter-spacing: -0.045em;
   animation: rise 900ms 80ms var(--arbora-ease) both;
+
+  & > span { display: block; }
 }
 
 .description {
@@ -86,6 +88,11 @@
 }
 
 .mockup {
+  margin-top: clamp(3rem, 2rem + 3vw, 4.5rem);
+  padding: clamp(10px, 2vw, 24px);
+  border: 1px solid var(--arbora-border);
+  border-radius: 28px;
+  background: linear-gradient(135deg, var(--arbora-glow-1), transparent 55%, var(--arbora-glow-3));
   animation: rise 1200ms 380ms var(--arbora-ease) both;
 }
 

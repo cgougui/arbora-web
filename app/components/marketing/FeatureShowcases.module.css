@@ -1,0 +1,98 @@
+.section {
+  padding-block: clamp(2.75rem, 1rem + 5vw, 5rem);
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: clamp(2rem, 3.5vw, 4rem);
+  align-items: center;
+}
+
+.layout[data-reverse] {
+  grid-template-columns: 1.1fr 0.9fr;
+}
+
+.layout[data-reverse] .content {
+  order: 2;
+}
+
+.content {
+  min-width: 0;
+}
+
+.points {
+  list-style: none;
+  margin: 25px 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.points li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: var(--arbora-muted);
+}
+
+.points svg {
+  flex: none;
+  margin-top: 3px;
+  color: light-dark(#087550, #79e3b9);
+}
+
+.link {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  color: light-dark(#087550, #79e3b9);
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.link:hover {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.link svg {
+  transition: transform 200ms ease;
+}
+
+.link:hover svg {
+  transform: translateX(3px);
+}
+
+.visual {
+  min-width: 0;
+  padding: 18px;
+  border: 1px solid var(--arbora-border);
+  border-radius: 22px;
+  background: linear-gradient(145deg, var(--arbora-glow-1), transparent 65%);
+}
+
+.layout[data-reverse] .visual {
+  background: linear-gradient(145deg, var(--arbora-glow-3), transparent 65%);
+}
+
+@media (max-width: $mantine-breakpoint-md) {
+  .layout, .layout[data-reverse] {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+  .layout[data-reverse] .content {
+    order: 0;
+  }
+}
+
+@media (max-width: $mantine-breakpoint-xs) {
+  .visual {
+    padding: 10px;
+    border-radius: 16px;
+  }
+}

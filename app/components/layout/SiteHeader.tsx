@@ -29,15 +29,6 @@ export function SiteHeader() {
             <ColorSchemeToggle />
             <Button
               component={Link}
-              to={copy.nav.signIn.to}
-              variant="subtle"
-              color="gray"
-              className={classes.desktopOnly}
-            >
-              {copy.nav.signIn.label}
-            </Button>
-            <Button
-              component={Link}
               to={copy.nav.primary.to}
               variant="gradient"
               className={classes.desktopOnly}
@@ -72,16 +63,6 @@ export function SiteHeader() {
           ))}
           <Button component={Link} to={copy.nav.primary.to} variant="gradient" size="lg" mt="xl" onClick={close}>
             {copy.nav.primary.label}
-          </Button>
-          <Button
-            component={Link}
-            to={copy.nav.signIn.to}
-            variant="default"
-            size="lg"
-            mt="sm"
-            onClick={close}
-          >
-            {copy.nav.signIn.label}
           </Button>
         </Stack>
       </Drawer>

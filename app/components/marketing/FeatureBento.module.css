@@ -23,9 +23,20 @@
   & > :nth-child(n + 5) { grid-column: span 3; }
 }
 
-/* Even rhythm: three equal columns. */
-.grid:not([data-bento]) > * {
-  grid-column: span 2;
+/* Compact overview: eight features in two rows. */
+.grid:not([data-bento]) {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-auto-rows: auto;
+
+  & > * { grid-column: auto; }
+
+  @media (max-width: $mantine-breakpoint-md) {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  @media (max-width: $mantine-breakpoint-xs) {
+    grid-template-columns: 1fr;
+  }
 }
 
 @media (max-width: $mantine-breakpoint-md) {
@@ -54,6 +65,8 @@
   backdrop-filter: blur(12px);
   overflow: hidden;
   isolation: isolate;
+  color: inherit;
+  text-decoration: none;
   transition: border-color 300ms ease, transform 500ms var(--arbora-ease);
 
   /* Cursor-following spotlight. */
@@ -107,7 +120,18 @@
   max-width: 440px;
   color: var(--arbora-muted);
   line-height: 1.6;
+  font-size: 0.9rem;
 }
+
+.arrow {
+  position: absolute;
+  top: 28px;
+  right: 24px;
+  color: var(--arbora-muted);
+  transition: transform 200ms ease;
+}
+
+.card:hover .arrow { transform: translate(2px, -2px); }
 
 /* Decorative oversized icon bleeding off the corner of featured cards. */
 .watermark {

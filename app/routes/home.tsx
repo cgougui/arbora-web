@@ -1,11 +1,11 @@
 import { CallToAction } from "~/components/marketing/CallToAction";
 import { Faq } from "~/components/marketing/Faq";
 import { FeatureBento } from "~/components/marketing/FeatureBento";
+import { FeatureShowcases } from "~/components/marketing/FeatureShowcases";
 import { Hero } from "~/components/marketing/Hero";
-import { LogoCloud } from "~/components/marketing/LogoCloud";
-import { Stats } from "~/components/marketing/Stats";
-import { Steps } from "~/components/marketing/Steps";
-import { Testimonials } from "~/components/marketing/Testimonials";
+import { Button, Group } from "@mantine/core";
+import { IconArrowRight } from "@tabler/icons-react";
+import { Link } from "react-router";
 import { Section } from "~/components/ui/Section";
 import { SectionHeading } from "~/components/ui/SectionHeading";
 import { copy } from "~/content/copy";
@@ -17,14 +17,16 @@ export default function Home() {
   return (
     <>
       <Hero />
-      <LogoCloud />
       <Section id="features">
         <SectionHeading copy={copy.home.features} />
-        <FeatureBento items={copy.home.features.items} />
+        <FeatureBento items={copy.home.features.items} bento={false} />
+        <Group justify="center" mt={36}>
+          <Button component={Link} to={copy.home.features.link.to} variant="subtle" rightSection={<IconArrowRight size={17} />}>
+            {copy.home.features.link.label}
+          </Button>
+        </Group>
       </Section>
-      <Stats />
-      <Steps />
-      <Testimonials />
+      <FeatureShowcases />
       <Faq copy={copy.home.faq} />
       <CallToAction copy={copy.home.cta} />
     </>
