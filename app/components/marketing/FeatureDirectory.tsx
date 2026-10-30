@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 
 import { copy } from "~/content/copy";
 import type { FeatureGroupId } from "~/content/schema";
-import { AppMockup } from "./AppMockup";
+import { AppScreenshot, ScreenshotGallery } from "./AppScreenshot";
 import { featureGroupIcons } from "./featureIcons";
 import classes from "./FeatureDirectory.module.css";
 
@@ -44,8 +44,9 @@ export function FeatureDirectory() {
                   <Title order={2} id={`${group.id}-title`} className={classes.title}>{group.title}</Title>
                   <Text className={classes.description}>{group.description}</Text>
                 </div>
-                <div className={classes.visual}><AppMockup variant={group.id} compact /></div>
+                <div className={classes.visual}><AppScreenshot variant={group.id} compact /></div>
               </div>
+              <ScreenshotGallery variant={group.id} />
               <dl className={classes.items}>
                 {group.items.map((item) => <div key={item.title}><dt>{item.title}</dt><dd>{item.description}</dd></div>)}
               </dl>

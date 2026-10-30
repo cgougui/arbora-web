@@ -3,7 +3,7 @@ import { IconArrowRight, IconDownload } from "@tabler/icons-react";
 import { Link } from "react-router";
 
 import { copy } from "~/content/copy";
-import { AppMockup } from "./AppMockup";
+import { AppScreenshot } from "./AppScreenshot";
 import classes from "./Hero.module.css";
 
 export function Hero() {
@@ -50,7 +50,7 @@ export function Hero() {
         <Text className={classes.note}>{hero.note}</Text>
 
         <div className={classes.mockup}>
-          <AppMockup />
+          <AppScreenshot priority />
         </div>
       </Container>
     </section>

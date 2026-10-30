@@ -1,0 +1,256 @@
+{
+  "schemaVersion": 1,
+  "platform": "Linux",
+  "generatedAt": "2026-10-30T14:50:45.255717+00:00",
+  "appRevision": "58a0a62edd740f73daafd1206f0a555acd0fb1c9",
+  "appDirty": false,
+  "scenes": {
+    "browse": {
+      "group": "browse",
+      "caption": "Two folders, side by side",
+      "alt": "Arbora showing project files and a delivery folder in split view.",
+      "images": {
+        "light": {
+          "src": "/screenshots/app/browse-light.png",
+          "width": 1280,
+          "height": 820,
+          "sha256": "ad68eddea7ec81d9d1a162eef35591afc589255e0fc5f534ceebbdf1e91bfd31"
+        },
+        "dark": {
+          "src": "/screenshots/app/browse-dark.png",
+          "width": 1280,
+          "height": 820,
+          "sha256": "00c1c186c68e1ae016af2377d72e34ec3add4b0dadbcb52fbf326dfa63c1ca68"
+        }
+      }
+    },
+    "grid": {
+      "group": "browse",
+      "caption": "Browse with thumbnails",
+      "alt": "Arbora's icon view with project folders, documents and image thumbnails.",
+      "images": {
+        "light": {
+          "src": "/screenshots/app/grid-light.png",
+          "width": 1280,
+          "height": 820,
+          "sha256": "3f35d3e6a1e4cf091613ceeb16ffc4ba068c6f0d8710ba3776e07f9fa1353325"
+        },
+        "dark": {
+          "src": "/screenshots/app/grid-dark.png",
+          "width": 1280,
+          "height": 820,
+          "sha256": "07ebe91308a626ee738164d12c91bc0e69604154780fe400957e889435aa4ac3"
+        }
+      }
+    },
+    "compact": {
+      "group": "browse",
+      "caption": "More files in a compact view",
+      "alt": "Arbora's compact file view with project files arranged in columns.",
+      "images": {
+        "light": {
+          "src": "/screenshots/app/compact-light.png",
+          "width": 1280,
+          "height": 820,
+          "sha256": "42f536d0b34a5650a28d9a9c4af9395e94281812721c5f2ed23f17a943645f52"
+        },
+        "dark": {
+          "src": "/screenshots/app/compact-dark.png",
+          "width": 1280,
+          "height": 820,
+          "sha256": "30ed9250b63538c0f89c8ddd3e12d2b6caabce97212112cda11ec59db66517ad"
+        }
+      }
+    },
+    "search": {
+      "group": "search",
+      "caption": "Find text inside your files",
+      "alt": "Native content search results for launch, with matching lines from project documents.",
+      "images": {
+        "light": {
+          "src": "/screenshots/app/search-light.png",
+          "width": 1280,
+          "height": 820,
+          "sha256": "acb48a8431df30f5f9cd8b18208cd22dea2cd789ad5e4e2da116b6059d24698b"
+        },
+        "dark": {
+          "src": "/screenshots/app/search-dark.png",
+          "width": 1280,
+          "height": 820,
+          "sha256": "dc6501406d3d26222673643536bfe946202a353057143189778dff39da7450c6"
+        }
+      }
+    },
+    "preview": {
+      "group": "preview",
+      "caption": "Read a document beside your files",
+      "alt": "Arbora's preview panel displaying a project brief beside the file listing.",
+      "images": {
+        "light": {
+          "src": "/screenshots/app/preview-light.png",
+          "width": 1280,
+          "height": 820,
+          "sha256": "448efabad63e02fe2c726eb8fcc45ca4dc879f8df1d8fe1134293ec33b7365ce"
+        },
+        "dark": {
+          "src": "/screenshots/app/preview-dark.png",
+          "width": 1280,
+          "height": 820,
+          "sha256": "4c0e6c55b81fb9f31f7c6f20dd41bb46ba195ff70a7a684ceee95da054bd8011"
+        }
+      }
+    },
+    "quick-preview": {
+      "group": "preview",
+      "caption": "A closer look with Quick Preview",
+      "alt": "Arbora's Quick Preview displaying the project brief without opening another app.",
+      "images": {
+        "light": {
+          "src": "/screenshots/app/quick-preview-light.png",
+          "width": 1280,
+          "height": 820,
+          "sha256": "ce2f69048ca4e1a867566fec30d5a76ae29343aa392aefc5a9097891e125f003"
+        },
+        "dark": {
+          "src": "/screenshots/app/quick-preview-dark.png",
+          "width": 1280,
+          "height": 820,
+          "sha256": "675974d2f2cdab9d5892225682e53d28da67118b4448b05f5f142b910d123487"
+        }
+      }
+    },
+    "archives": {
+      "group": "connections",
+      "caption": "Browse a ZIP without extracting it",
+      "alt": "Arbora displaying documents inside a ZIP archive as a file listing.",
+      "images": {
+        "light": {
+          "src": "/screenshots/app/archives-light.png",
+          "width": 1280,
+          "height": 820,
+          "sha256": "2a520d0df430559afd770288f844ac85f9feef0d366428b9cfbf660ec8cce839"
+        },
+        "dark": {
+          "src": "/screenshots/app/archives-dark.png",
+          "width": 1280,
+          "height": 820,
+          "sha256": "487dbf432fe0273a75ced53ef788a5c7052c1d40f52dd04545ee4d940f7eeb5c"
+        }
+      }
+    },
+    "operations": {
+      "group": "operations",
+      "caption": "Review new names before applying them",
+      "alt": "The native batch rename dialog replacing Draft with Launch in six filenames.",
+      "images": {
+        "light": {
+          "src": "/screenshots/app/operations-light.png",
+          "width": 1280,
+          "height": 820,
+          "sha256": "2b6bc827fda5a63a1a6d95fe6a9c5221cd1b5f929082b89564e158ec2a805665"
+        },
+        "dark": {
+          "src": "/screenshots/app/operations-dark.png",
+          "width": 1280,
+          "height": 820,
+          "sha256": "cc13222bc9504387a9ccb6060913ba40c2761383a9b4f475129401f993e3a591"
+        }
+      }
+    },
+    "workspaces": {
+      "group": "workspaces",
+      "caption": "A setup for every project",
+      "alt": "Arbora's workspace manager with Studio, Development and Photo library workspaces.",
+      "images": {
+        "light": {
+          "src": "/screenshots/app/workspaces-light.png",
+          "width": 1280,
+          "height": 820,
+          "sha256": "173db2fe55754fbddf385d6a2f1603e28ff80ff9845242206009eccc0403ef4b"
+        },
+        "dark": {
+          "src": "/screenshots/app/workspaces-dark.png",
+          "width": 1280,
+          "height": 820,
+          "sha256": "99fb37c0ff5adce57805f4f8a52715b21c88ca9a4755d2e0dfae13e3d37508cd"
+        }
+      }
+    },
+    "connections": {
+      "group": "connections",
+      "caption": "Connect using your SSH setup",
+      "alt": "Arbora's Connect to Server dialog with an example SSH address entered; no connection is active.",
+      "images": {
+        "light": {
+          "src": "/screenshots/app/connections-light.png",
+          "width": 1280,
+          "height": 820,
+          "sha256": "fcd3962b1ffa8f3f10ce751c906529b0ca2f08cbc7b98e74d8f5a62214d7ea7f"
+        },
+        "dark": {
+          "src": "/screenshots/app/connections-dark.png",
+          "width": 1280,
+          "height": 820,
+          "sha256": "5417f2aaa5196e231761157adc0c68a61961afc6b0808e679a5ba36b570c2c3a"
+        }
+      }
+    },
+    "personalize": {
+      "group": "personalize",
+      "caption": "Choose your palette and style",
+      "alt": "Arbora's Preferences showing the native theme gallery.",
+      "images": {
+        "light": {
+          "src": "/screenshots/app/personalize-light.png",
+          "width": 1280,
+          "height": 820,
+          "sha256": "76b323883c07935e55d5d0de38ab51eddefbed05bb164393ba4fb2fdf3db327e"
+        },
+        "dark": {
+          "src": "/screenshots/app/personalize-dark.png",
+          "width": 1280,
+          "height": 820,
+          "sha256": "941665ebfd102e12c681b1bfbe78fb3f0d15825ffb98f615e7dd7584a880f98c"
+        }
+      }
+    },
+    "commands": {
+      "group": "personalize",
+      "caption": "Every command within reach",
+      "alt": "Arbora's command palette with available actions and their keyboard shortcuts.",
+      "images": {
+        "light": {
+          "src": "/screenshots/app/commands-light.png",
+          "width": 1280,
+          "height": 820,
+          "sha256": "3e429099f8aab9ac9f175784e75b5e5d2fde8ae7fd0990d24f29e91a2252a099"
+        },
+        "dark": {
+          "src": "/screenshots/app/commands-dark.png",
+          "width": 1280,
+          "height": 820,
+          "sha256": "9a36f1e0b95909630045775eeaa80878656c88cdbae84f14319764c57f76542b"
+        }
+      }
+    },
+    "shortcuts": {
+      "group": "personalize",
+      "caption": "Make the keyboard your own",
+      "alt": "Arbora's keyboard shortcut editor showing editable navigation bindings.",
+      "images": {
+        "light": {
+          "src": "/screenshots/app/shortcuts-light.png",
+          "width": 1280,
+          "height": 820,
+          "sha256": "cadf2d7f86071aff41d123cb5454f334efb6acaf5c691d02992c99808a079cb5"
+        },
+        "dark": {
+          "src": "/screenshots/app/shortcuts-dark.png",
+          "width": 1280,
+          "height": 820,
+          "sha256": "7f5e2dffb93b966398ec3a6020d816c95902361be3459ad171a4209439c6e628"
+        }
+      }
+    }
+  }
+}

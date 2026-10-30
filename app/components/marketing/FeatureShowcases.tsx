@@ -4,7 +4,7 @@ import { Link } from "react-router";
 import { Section } from "~/components/ui/Section";
 import { SectionHeading } from "~/components/ui/SectionHeading";
 import { copy } from "~/content/copy";
-import { AppMockup } from "./AppMockup";
+import { AppScreenshot } from "./AppScreenshot";
 import classes from "./FeatureShowcases.module.css";
 
 export function FeatureShowcases() {
@@ -18,7 +18,7 @@ export function FeatureShowcases() {
           </ul>
           <Link to={showcase.link.to} className={classes.link}>{showcase.link.label}<IconArrowRight size={17} aria-hidden="true" /></Link>
         </div>
-        <div className={classes.visual}><AppMockup variant={showcase.id} compact /></div>
+        <div className={classes.visual}><AppScreenshot variant={showcase.id} compact /></div>
       </div>
     </Section>
   ));

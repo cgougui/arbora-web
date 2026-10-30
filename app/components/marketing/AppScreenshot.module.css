@@ -1,0 +1,53 @@
+.figure {
+  margin: 0;
+  min-width: 0;
+  text-align: left;
+}
+
+.link {
+  display: block;
+  overflow: hidden;
+  border: 1px solid var(--arbora-border-strong);
+  border-radius: 12px;
+  background: var(--arbora-surface-strong);
+  box-shadow: 0 24px 70px -28px rgb(0 0 0 / 0.25);
+}
+
+.link:focus-visible {
+  outline: 3px solid var(--mantine-primary-color-filled);
+  outline-offset: 4px;
+}
+
+.image {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.caption {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 5px 16px;
+  padding: 12px 2px 0;
+  color: var(--arbora-muted);
+  font-size: 11px;
+  line-height: 1.6;
+}
+
+.detail {
+  font-size: 10px;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
+  gap: 28px;
+  margin-top: 36px;
+}
+
+@media (max-width: $mantine-breakpoint-sm) {
+  .link {
+    border-radius: 8px;
+  }
+}

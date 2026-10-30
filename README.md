@@ -40,24 +40,44 @@ The home page summarizes the product and highlights browsing, search, and previe
 The features page includes the full feature inventory in eight linked sections.
 `FeatureDirectory` provides sticky category navigation that follows the visible section.
 
-Product screenshots are illustrative UI placeholders rendered by `AppMockup`, with a
-scene for each feature group. Shared example files live in `home.mockup`; scene copy
-lives in `mockups`. Replace these mockups with real screenshots when they are ready.
-Pricing and download pages still contain the original shell copy.
+Product images are screenshots of the real Linux desktop app. `AppScreenshot`
+selects the capture matching the site's light/dark theme, includes descriptive
+alt text and opens the original image at full size. The hero loads eagerly;
+feature images and galleries load lazily. Feature sections use their matching
+workflow; extra views appear in the corresponding section's gallery. Keep
+`AppMockup`: it supplies the existing visual for sections awaiting their first
+completed screenshot pair.
 
-To capture the actual desktop app on Linux, run the sibling app's screenshot script:
+Refresh every screenshot and update the website from the sibling app checkout:
 
 ```sh
 cd ../arbora
-npm run screenshot -- --theme dark --output ../arbora-web/public/screenshots/arbora-dark.png
+npm run screenshots:website
 ```
 
-It builds and launches Tauri on a private virtual display using temporary settings
-and sample files. Use `--directory /path/to/folder`, `--view grid`, `--split`, or
-`--width 1600 --height 1000` to adjust the scene. The resulting image is available
-to this site at `/screenshots/arbora-dark.png`; components can reference it when
-replacing a mockup. See [native screenshot setup](../arbora/docs/development/testing.md#native-screenshots)
-for dependencies, logs and faster subsequent captures.
+The command builds Tauri once and captures 16 native scenes in both themes using
+disposable sample files. Each finished theme pair immediately updates
+`public/screenshots/app/` and `app/content/screenshots.json`. It installs the
+screenshot components and their placements with the first pair. Later runs
+preserve component customizations and refresh the images and manifest.
+
+Run `npm run screenshots:website -- --list` to see the scene catalog. Add
+`--skip-build` only when the standalone app is already current. Use `--site PATH`
+for a different website checkout. `--capture-only` creates the suite without
+touching this website; `--install-only` installs saved pairs, including a partial
+suite, later. Every successful image is retained in the app checkout's
+`artifacts/screenshots/website/captures/`, with a `progress.json` checkpoint.
+A scene failure leaves completed pairs visible on this website and the batch
+continues with other scenes, reporting failures at the end. An initial startup
+or build failure stops immediately. Continue an interrupted or failed run with
+`npm run screenshots:website -- --resume --skip-build`.
+Omit `--resume` when refreshing after app changes; that recaptures all scenes.
+
+See the app's [native screenshot setup](../arbora/docs/development/testing.md#native-screenshots)
+for Linux dependencies, logs and individual scene captures. Run `npm run typecheck`
+and `npm run build` here after refreshing. Connection images show an example SSH
+form; they do not imply an active server connection.
+
 
 ## Layout
 
