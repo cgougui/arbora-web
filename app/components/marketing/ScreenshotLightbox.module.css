@@ -1,0 +1,163 @@
+/* The backdrop stays dark in both color schemes so the capture is the only bright surface. */
+.overlay {
+  background: rgb(5 8 7 / 0.82);
+  backdrop-filter: blur(14px) saturate(120%);
+}
+
+/* Doubled class: must beat Mantine's own rules regardless of stylesheet order. */
+.popup.popup {
+  --toolbar-height: 56px;
+
+  flex: 0 0 min(
+    var(--shot-width),
+    calc(100vw - 2 * var(--modal-x-offset)),
+    calc((100dvh - 2 * var(--modal-y-offset) - var(--toolbar-height)) * var(--shot-ratio))
+  );
+  overflow: visible;
+  background: transparent;
+  box-shadow: none;
+}
+
+/* Clicking the image moves focus to this container, which is not an interactive control. */
+.popup.popup:focus {
+  outline: none;
+}
+
+.popupBody.popupBody {
+  padding: 0;
+}
+
+.toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  height: var(--toolbar-height);
+  padding-bottom: 10px;
+}
+
+.toolbarText {
+  min-width: 0;
+}
+
+.popupTitle.popupTitle {
+  overflow: hidden;
+  color: #ffffff;
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 1.35;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.popupDetail {
+  display: block;
+  color: rgb(255 255 255 / 0.62);
+  font-size: 12px;
+  line-height: 1.35;
+}
+
+.close.close {
+  flex: none;
+  margin: 0;
+  background: rgb(255 255 255 / 0.1);
+  color: #ffffff;
+}
+
+.close.close:hover {
+  background: rgb(255 255 255 / 0.2);
+}
+
+.close.close:focus-visible {
+  outline: 2px solid #ffffff;
+  outline-offset: 2px;
+}
+
+.popupImage {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 0 0 1px rgb(255 255 255 / 0.12), 0 40px 120px -30px rgb(0 0 0 / 0.8);
+}
+
+.popupImage[data-direction] {
+  animation: shot-step 280ms var(--arbora-ease);
+}
+
+.popupImage[data-direction="-1"] {
+  --shot-shift: -16px;
+}
+
+@keyframes shot-step {
+  from {
+    opacity: 0.35;
+    transform: translateX(var(--shot-shift, 16px));
+  }
+}
+
+.stage {
+  position: relative;
+}
+
+.previous.previous,
+.next.next {
+  position: absolute;
+  top: 50%;
+  border: 1px solid rgb(255 255 255 / 0.18);
+  background: rgb(11 15 14 / 0.62);
+  color: #ffffff;
+  transform: translateY(-50%);
+  backdrop-filter: blur(8px);
+}
+
+.previous.previous {
+  left: 12px;
+}
+
+.next.next {
+  right: 12px;
+}
+
+.previous.previous:hover,
+.next.next:hover {
+  background: rgb(11 15 14 / 0.86);
+}
+
+.previous.previous:focus-visible,
+.next.next:focus-visible {
+  outline: 2px solid #ffffff;
+  outline-offset: 2px;
+}
+
+/* From this width there is always a gutter wide enough to keep the arrows off the capture. */
+@media (min-width: 1424px) {
+  .previous.previous {
+    left: -60px;
+  }
+
+  .next.next {
+    right: -60px;
+  }
+}
+
+/* Phone captures are too small to cover with buttons, and there is room below them. */
+@media (max-width: $mantine-breakpoint-sm) {
+  .popupImage {
+    flex: 0 0 100%;
+    border-radius: 8px;
+  }
+
+  .stage {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+  }
+
+  .previous.previous,
+  .next.next {
+    position: static;
+    transform: none;
+  }
+}

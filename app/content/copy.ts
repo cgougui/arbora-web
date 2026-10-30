@@ -686,4 +686,11 @@ export const copy = {
     title: "Something went wrong",
     description: "An unexpected error occurred. Please try again.",
   },
+  screenshot: {
+    enlarge: "View larger",
+    enlargeLabel: "view larger screenshot",
+    close: "Close screenshot",
+    previous: "Previous screenshot",
+    next: "Next screenshot",
+  },
 } satisfies SiteCopy;

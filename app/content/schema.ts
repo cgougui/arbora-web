@@ -224,4 +224,13 @@ export interface SiteCopy {
     title: string;
     description: string;
   };
+  screenshot: {
+    /** Visible hint under a screenshot that it can be enlarged. */
+    enlarge: string;
+    /** Screen-reader suffix for the screenshot link, after its caption. */
+    enlargeLabel: string;
+    close: string;
+    previous: string;
+    next: string;
+  };
 }

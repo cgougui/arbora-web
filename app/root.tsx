@@ -7,6 +7,7 @@ import { ColorSchemeScript, MantineProvider, mantineHtmlProps } from "@mantine/c
 import { isRouteErrorResponse, Links, Meta, Outlet, Scripts, ScrollRestoration } from "react-router";
 
 import type { Route } from "./+types/root";
+import { ScreenshotLightbox } from "./components/marketing/ScreenshotLightbox";
 import { ErrorState } from "./components/ui/ErrorState";
 import { copy } from "./content/copy";
 import { theme } from "./theme";
@@ -39,7 +40,11 @@ export function Layout({ children }: { children: React.ReactNode }) {
 }
 
 export default function App() {
-  return <Outlet />;
+  return (
+    <ScreenshotLightbox>
+      <Outlet />
+    </ScreenshotLightbox>
+  );
 }
 
 export function ErrorBoundary({ error }: Route.ErrorBoundaryProps) {
