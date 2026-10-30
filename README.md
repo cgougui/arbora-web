@@ -45,6 +45,20 @@ scene for each feature group. Shared example files live in `home.mockup`; scene 
 lives in `mockups`. Replace these mockups with real screenshots when they are ready.
 Pricing and download pages still contain the original shell copy.
 
+To capture the actual desktop app on Linux, run the sibling app's screenshot script:
+
+```sh
+cd ../arbora
+npm run screenshot -- --theme dark --output ../arbora-web/public/screenshots/arbora-dark.png
+```
+
+It builds and launches Tauri on a private virtual display using temporary settings
+and sample files. Use `--directory /path/to/folder`, `--view grid`, `--split`, or
+`--width 1600 --height 1000` to adjust the scene. The resulting image is available
+to this site at `/screenshots/arbora-dark.png`; components can reference it when
+replacing a mockup. See [native screenshot setup](../arbora/docs/development/testing.md#native-screenshots)
+for dependencies, logs and faster subsequent captures.
+
 ## Layout
 
 ```
